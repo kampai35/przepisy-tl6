@@ -75,7 +75,7 @@ Rails.application.configure do
     logger.formatter = config.log_formatter
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
-  config.hosts << "dupa"
+  config.hosts << "przepisy-tl6.herokuapp.com"
 #   config.hosts.clear # todo remove it!!! let all
 
   # Inserts middleware to perform automatic connection switching.
