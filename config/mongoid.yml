@@ -1,0 +1,28 @@
+development:
+  clients:
+    default:
+      database: przepisy
+      hosts:
+        - mongo:27017
+      options:
+  options:
+
+production:
+  clients:
+    default:
+      database: przepisy
+      hosts:
+        - mongo:27017
+      options:
+  options:
+
+test:
+  clients:
+    default:
+      database: przepisy_test
+      hosts:
+        - localhost:27017
+      options:
+        read:
+          mode: :primary
+        max_pool_size: 1
