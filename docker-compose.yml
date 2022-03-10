@@ -17,7 +17,7 @@ services:
         labels:
             traefik.frontend.rule: "Host:api.przepisy.docker"
         volumes:
-            - ./:/usr/src/app:cached
+            - ./backend:/usr/src/app:cached
             - /usr/src/app/tmp/db
         restart: always
     mongo:

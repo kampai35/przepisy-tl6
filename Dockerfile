@@ -2,8 +2,8 @@ FROM ruby:2.6.3
 MAINTAINER Dominik Rżany<dominik.rzany@gmail.com>
 WORKDIR /usr/src/app
 
-COPY ./Gemfile ./
-COPY ./Gemfile.lock ./
+COPY backend/Gemfile ./
+COPY backend/Gemfile.lock ./
 RUN bundle install
 
 EXPOSE 3011
