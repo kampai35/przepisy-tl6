@@ -17,13 +17,17 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RegisterFormComponent } from './register-form/register-form.component';
+import { FooterComponent } from './footer/footer.component';
+import { MainPageComponent } from './main-page/main-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     LoginFormComponent,
-    RegisterFormComponent
+    RegisterFormComponent,
+    FooterComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserModule,
