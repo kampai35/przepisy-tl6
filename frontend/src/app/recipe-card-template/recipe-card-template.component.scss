@@ -1,0 +1,111 @@
+@mixin stars{
+  mat-icon{
+    color: rgb(200, 200, 2);
+    font-size: 20px;
+    width: 18px;
+  }
+}
+@mixin descElement{
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 16px;
+}
+@mixin fullCardDescElement{
+  display: inline-block;
+  vertical-align: top;
+  font-size: 16px;
+}
+
+
+//closed card
+.mat-expansion-panel{
+  width: 100%;
+  padding: 10px;
+
+  //closed card header
+  .mat-expansion-panel-header-title{ display: block; }
+  .rating{ @include stars(); }
+
+  //closed card description
+  mat-panel-description{
+    text-align: center;
+    display: table;
+    mat-icon{ vertical-align: middle; }
+
+    .prepTime, .difficulty, .tags{  @include descElement(); }
+    .prepTime{ width: 20%; }
+    .difficulty{ width: 40%; }
+    .tags{ width: 40%; }
+  }
+
+  //body
+  .bodyContainer{
+    display: flex;
+  }
+  .recipeTitle{
+    width: 20%;
+  }
+  .tag{
+  }
+  .recipeButton{
+    flex: auto;
+    text-align: right;
+    .mat-raised-button.mat-primary{
+      background-color: #ffba70;
+      padding: 5px 20px 5px 20px;
+      font-size: 24px;
+    }
+  }
+}
+
+//open card
+.mat-expansion-panel .mat-expanded{
+  min-height: 270px;
+  margin: 0;
+
+  //header with image
+  .foodImage{
+    img{
+      width: 300px;
+      height: 225px;
+    }
+  }
+  mat-expansion-panel-header{ width: 20%; }
+
+  //vertical align for heart icon
+  mat-icon{ vertical-align: top; }
+
+  //open card description
+  mat-panel-description{
+    width: 80%;
+    text-align: left;
+    color: black;
+
+    .fav{
+      margin-left: 5px;
+      color: red;
+      font-size: 30px;
+    }
+
+    .prepTime, .difficulty{ @include fullCardDescElement(); }
+
+    .shortDescription{
+      font-size: 16px;
+      width: 70%;
+      margin-top: 20px;
+    }
+  }
+
+
+}
+
+//global here
+h1{
+  font-size: 26px;
+  font-weight: bold;
+}
+h2{
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+}

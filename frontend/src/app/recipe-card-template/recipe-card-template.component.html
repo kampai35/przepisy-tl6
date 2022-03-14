@@ -1,0 +1,110 @@
+<mat-accordion>
+  <mat-expansion-panel (opened)="panelOpenState = true"
+                       (closed)="panelOpenState = false">
+
+    <mat-expansion-panel-header>
+      <!-- closed card header title -->
+      <mat-panel-title *ngIf="!panelOpenState">
+        <div class="title">
+          <h2>Kurczak w sosie</h2>
+        </div>
+
+        <div class="rating">
+          <mat-icon>star</mat-icon>
+          <mat-icon>star</mat-icon>
+          <mat-icon>star</mat-icon>
+          <mat-icon>star</mat-icon>
+          <mat-icon>star</mat-icon>
+        </div>
+      </mat-panel-title>
+
+      <!-- full card header title -->
+      <mat-panel-title *ngIf="panelOpenState">
+        <div class="foodImage">
+          <img src="https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/DA2CE7B2-213D-47CD-BC65-8746BF251207/Derivates/ac919776-333a-491f-adeb-f584db66502f.jpg">
+        </div>
+      </mat-panel-title>
+
+      <!-- closed card description -->
+      <mat-panel-description *ngIf="!panelOpenState">
+        <!-- time -->
+        <div class="prepTime">
+          <mat-icon>timelapse</mat-icon>
+          <span class="time"> 1h 30min</span>
+        </div>
+
+        <!-- difficulty -->
+        <div class="difficulty">
+          <span class="difficultyText">poziom trudności </span>
+          <mat-icon>local_fire_department</mat-icon>
+          <mat-icon>local_fire_department</mat-icon>
+          <mat-icon>local_fire_department</mat-icon>
+        </div>
+
+        <!-- tags -->
+        <div class="tags">
+          <span class="tagItem">mięso </span>
+          <span class="tagItem">masło </span>
+          <span class="more"><mat-icon>more_horiz</mat-icon></span>
+        </div>
+      </mat-panel-description>
+
+      <!-- full card description -->
+      <mat-panel-description *ngIf="panelOpenState">
+        <div class="title">
+          <h1>
+            <span class="recipeTitle">Kurczak w sosie</span>
+            <mat-icon class="fav">favorite</mat-icon>
+          </h1>
+        </div>
+
+        <!-- time and difficulty -->
+        <div class="prepTime">
+          <mat-icon>timelapse</mat-icon>
+          <span class="time"> 1h 30min</span>
+        </div>
+
+        <div class="difficulty">
+          <span class="difficultyText">poziom trudności </span>
+          <mat-icon>local_fire_department</mat-icon>
+          <mat-icon>local_fire_department</mat-icon>
+          <mat-icon>local_fire_department</mat-icon>
+        </div>
+
+        <!-- short description -->
+        <div class="shortDescription">
+          <span class="shortDescriptionContent">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis blandit lectus sem, id maximus justo consequat vestibulum. In pellentesque tincidunt mauris, et bibendum nibh lacinia eu. Nunc auctor commodo velit, vitae condimentum orci gravida sit amet. Donec maximus lectus dolor, non dictum magna eleifend ut.
+          </span>
+        </div>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <!-- body tab (mat-expansion-panel-body)-->
+    <div class="bodyContainer">
+      <!-- title -->
+      <div class="recipeTitle">
+        <div class="title">
+          <h2>Kurczak w sosie</h2>
+        </div>
+        <div class="rating">
+          <mat-icon>star</mat-icon>
+          <mat-icon>star</mat-icon>
+          <mat-icon>star</mat-icon>
+          <mat-icon>star</mat-icon>
+          <mat-icon>star</mat-icon>
+        </div>
+      </div>
+      <!-- tags -->
+      <div class="tag">
+        <span class="tag-item">mięso</span>
+        <span class="tag-item">coś innego</span>
+      </div>
+      <!-- button -->
+      <div class="recipeButton">
+        <button mat-raised-button color="primary">PRZEPIS</button>
+      </div>
+    </div>
+
+  </mat-expansion-panel>
+</mat-accordion>
