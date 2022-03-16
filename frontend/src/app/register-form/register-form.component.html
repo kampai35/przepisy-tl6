@@ -7,8 +7,8 @@
 </div>
 
 <div class="modal-body">
-  <form #f="ngForm" (ngSubmit)="submit(f)">
-    <!-- username input -->
+  <!-- <form #f="ngForm">
+
     <div class="form-group">
       <mat-form-field appearance="fill">
         <mat-label>Nazwa użytkownika:</mat-label>
@@ -22,7 +22,7 @@
       </mat-form-field>
     </div>
 
-    <!-- mail input -->
+
     <div class="form-group">
       <mat-form-field appearance="fill">
         <mat-label>E-mail:</mat-label>
@@ -36,7 +36,7 @@
       </mat-form-field>
     </div>
 
-    <!-- password input -->
+
     <div class="form-group">
       <mat-form-field>
         <mat-label>Hasło:</mat-label>
@@ -48,7 +48,7 @@
         #password="ngModel" name="password" id="password">
       </mat-form-field>
     </div>
-    <!-- password input -->
+
     <div class="form-group">
       <mat-form-field>
         <mat-label>Potwierdź hasło:</mat-label>
@@ -58,6 +58,70 @@
         ngModel
         required
         #passwordConfirm="ngModel" name="passwordConfirm" id="passwordConfirm">
+      </mat-form-field>
+    </div>
+
+  </form> -->
+  <form [formGroup]="loginForm">
+    <div class="form-group">
+      <mat-form-field>
+        <mat-label>Nazwa użytkownika:</mat-label>
+        <input
+          matInput
+          formControlName="username"
+          id="username"
+          type="text"
+          placeholder = "np. kampai"
+          required
+          >
+
+          <mat-error *ngIf="username?.invalid">{{usernameErrorMessage}}</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <mat-form-field>
+        <mat-label>E-mail:</mat-label>
+        <input
+          matInput
+          formControlName="email"
+          id="email"
+          type="email"
+          placeholder = "np. jkowalski@gmail.com"
+          required
+          >
+
+          <mat-error *ngIf="email?.invalid">{{emailErrorMessage}}</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <mat-form-field>
+        <mat-label>Hasło:</mat-label>
+        <input
+          matInput
+          formControlName="password"
+          id="password"
+          type="password"
+          required
+        >
+
+        <mat-error *ngIf="password?.invalid">{{passwordErrorMessage}}</mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-group">
+      <mat-form-field>
+        <mat-label>Powtórz hasło:</mat-label>
+        <input
+          matInput
+          formControlName="confirmPassword"
+          id="confirmPassword"
+          type="password"
+          required
+        >
+
+        <mat-error *ngIf="confirmPassword?.invalid">{{confirmPasswordErrorMessage}}</mat-error>
       </mat-form-field>
     </div>
 

@@ -7,31 +7,35 @@
 </div>
 
 <div class="modal-body">
-  <form #f="ngForm" (ngSubmit)="submit(f)">
-    <!-- login input -->
+  <form [formGroup]="loginForm">
     <div class="form-group">
-      <mat-form-field appearance="fill">
+      <mat-form-field>
         <mat-label>E-mail:</mat-label>
         <input
-        matInput
-        placeholder="jkowalski@gmail.com"
-        type="email"
-        required
-        ngModel email="true"
-        #login="ngModel" name="login" id="login">
+          matInput
+          formControlName="email"
+          id="email"
+          type="email"
+          placeholder = "np. jkowalski@gmail.com"
+          required
+          >
+
+          <mat-error *ngIf="email?.invalid">{{emailErrorMessage}}</mat-error>
       </mat-form-field>
     </div>
 
-    <!-- password input -->
     <div class="form-group">
       <mat-form-field>
         <mat-label>Hasło:</mat-label>
         <input
-        matInput
-        type="password"
-        ngModel
-        required
-        #password="ngModel" name="#password" id="#password">
+          matInput
+          formControlName="password"
+          id="password"
+          type="password"
+          required
+        >
+
+        <mat-error *ngIf="password?.invalid">{{passwordErrorMessage}}</mat-error>
       </mat-form-field>
     </div>
 

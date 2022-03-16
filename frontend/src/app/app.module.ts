@@ -11,6 +11,7 @@ import { RegisterFormComponent } from './register-form/register-form.component';
 import { FooterComponent } from './footer/footer.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { RecipeCardTemplateComponent } from './recipe-card-template/recipe-card-template.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //material
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
@@ -18,7 +19,6 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import { FormsModule } from '@angular/forms';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatExpansionModule } from '@angular/material/expansion';
@@ -39,6 +39,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
     BrowserAnimationsModule,
     FormsModule,
     NgbModule,
+    ReactiveFormsModule,
     //material
     MatToolbarModule,
     MatButtonModule,
