@@ -4,8 +4,10 @@ class RecipesController < ApplicationController
     @permitted_params = [
         :name,
         :description,
+        :short_description,
         :time,
         :size,
+        :image,
         :single_pot,
         :level,
         :ingredients => [
