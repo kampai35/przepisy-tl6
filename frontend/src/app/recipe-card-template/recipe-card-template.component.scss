@@ -21,6 +21,8 @@
 .mat-expansion-panel{
   width: 100%;
   padding: 10px;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 
   //closed card header
   .mat-expansion-panel-header-title{ display: block; }
@@ -62,6 +64,8 @@
 .mat-expansion-panel .mat-expanded{
   min-height: 270px;
   margin: 0;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 
   //header with image
   .foodImage{

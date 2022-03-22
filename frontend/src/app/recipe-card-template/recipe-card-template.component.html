@@ -2,9 +2,9 @@
   <mat-expansion-panel (opened)="panelOpenState = true"
                        (closed)="panelOpenState = false">
 
-    <mat-expansion-panel-header>
+    <mat-expansion-panel-header *ngIf="!panelOpenState">
       <!-- closed card header title -->
-      <mat-panel-title *ngIf="!panelOpenState">
+      <mat-panel-title>
         <div class="title">
           <h2>Kurczak w sosie</h2>
         </div>
@@ -18,15 +18,8 @@
         </div>
       </mat-panel-title>
 
-      <!-- full card header title -->
-      <mat-panel-title *ngIf="panelOpenState">
-        <div class="foodImage">
-          <img src="https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/DA2CE7B2-213D-47CD-BC65-8746BF251207/Derivates/ac919776-333a-491f-adeb-f584db66502f.jpg">
-        </div>
-      </mat-panel-title>
-
       <!-- closed card description -->
-      <mat-panel-description *ngIf="!panelOpenState">
+      <mat-panel-description>
         <!-- time -->
         <div class="prepTime">
           <mat-icon>timelapse</mat-icon>
@@ -48,9 +41,19 @@
           <span class="more"><mat-icon>more_horiz</mat-icon></span>
         </div>
       </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <!-- fix - open header -->
+    <mat-expansion-panel-header *ngIf="panelOpenState">
+      <!-- full card header title -->
+      <mat-panel-title>
+        <div class="foodImage">
+          <img src="https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/DA2CE7B2-213D-47CD-BC65-8746BF251207/Derivates/ac919776-333a-491f-adeb-f584db66502f.jpg">
+        </div>
+      </mat-panel-title>
 
       <!-- full card description -->
-      <mat-panel-description *ngIf="panelOpenState">
+      <mat-panel-description>
         <div class="title">
           <h1>
             <span class="recipeTitle">Kurczak w sosie</span>
