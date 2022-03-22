@@ -1,0 +1,21 @@
+.containerF{
+  padding: 0;
+  margin-bottom: 1rem;
+  display: flex;
+
+  .spacer{
+    flex: auto;
+  }
+
+  .selected{
+    display: flex;
+  }
+
+}
+.mat-form-field-flex{
+  background-color: transparent;
+
+  .mat-select-arrow{
+    border: 0;
+  }
+}

@@ -12,6 +12,7 @@ import { FooterComponent } from './footer/footer.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { RecipeCardTemplateComponent } from './recipe-card-template/recipe-card-template.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FiltrAndSortComponent } from './filtr-and-sort/filtr-and-sort.component';
 //material
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
@@ -22,6 +23,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatExpansionModule } from '@angular/material/expansion';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     RegisterFormComponent,
     FooterComponent,
     MainPageComponent,
-    RecipeCardTemplateComponent
+    RecipeCardTemplateComponent,
+    FiltrAndSortComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +51,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatInputModule,
     MatFormFieldModule,
     MatAutocompleteModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
