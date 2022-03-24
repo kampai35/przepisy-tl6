@@ -1,3 +1,4 @@
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -43,6 +44,7 @@ import {MatSelectModule} from '@angular/material/select';
     FormsModule,
     NgbModule,
     ReactiveFormsModule,
+    HttpClientModule,
     //material
     MatToolbarModule,
     MatButtonModule,
@@ -54,7 +56,7 @@ import {MatSelectModule} from '@angular/material/select';
     MatExpansionModule,
     MatSelectModule
   ],
-  providers: [],
+  providers: [HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

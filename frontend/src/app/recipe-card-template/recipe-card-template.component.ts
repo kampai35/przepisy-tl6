@@ -1,5 +1,3 @@
-import { Irecipes } from './../irecipes';
-import { RecipeService } from './../recipe.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -10,18 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class RecipeCardTemplateComponent implements OnInit {
   panelOpenState = false;
 
-  Irecipes: Irecipes[] = [];
-  constructor(
-    private recipeService: RecipeService
-  ) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
-
-  // recipeList(){
-  //   this.recipeService.recipeList().subscribe((result: Irecipes[])=>{
-  //     this.Irecipes = result;
-  //   })
-  // }
 
 }
