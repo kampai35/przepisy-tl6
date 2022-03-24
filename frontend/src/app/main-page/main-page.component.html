@@ -1,5 +1,48 @@
 <div class="container">
   <app-filtr-and-sort></app-filtr-and-sort>
-  <app-recipe-card-template></app-recipe-card-template>
+
+  <app-recipe-card-template>
+    <div class="title">Kurczak w sosiem</div>
+    <div class="time"><mat-icon>timelapse</mat-icon>1h 30min</div>
+    <div class="fireIcons">
+      poziom trudności:
+      <mat-icon>local_fire_department</mat-icon>
+      <mat-icon>local_fire_department</mat-icon>
+      <mat-icon>local_fire_department</mat-icon>
+    </div>
+    <div class="tagItem">
+      <!-- dorzucić tu cały osobny komponent z chipsami
+      https://material.angular.io/components/chips/examples -->
+      <span class="tagItem">mięso </span>
+      <span class="tagItem">masło </span>
+      <span class="more"><mat-icon>more_horiz</mat-icon></span>
+    </div>
+    <!-- open -->
+    <div class="foodImage">
+      <img src="https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/DA2CE7B2-213D-47CD-BC65-8746BF251207/Derivates/ac919776-333a-491f-adeb-f584db66502f.jpg">
+    </div>
+    <div class="recipeBigTitle">
+      Kurczak w sosie
+    </div>
+    <div class="timeOpen"><mat-icon>timelapse</mat-icon>1h 30min</div>
+
+    <div class="fireIconsOpen">
+      poziom trudności:
+      <mat-icon>local_fire_department</mat-icon>
+      <mat-icon>local_fire_department</mat-icon>
+      <mat-icon>local_fire_department</mat-icon>
+    </div>
+
+    <div class="shortDescription">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis blandit lectus sem, id maximus justo consequat vestibulum. In pellentesque tincidunt mauris, et bibendum nibh lacinia eu. Nunc auctor commodo velit, vitae condimentum orci gravida sit amet. Donec maximus lectus dolor, non dictum magna eleifend ut.
+    </div>
+    <div class="titleInBody">
+      Kurczak w sosie
+    </div>
+     <div class="button">
+      <button mat-raised-button color="primary">PRZEPIS</button>
+     </div>
+  </app-recipe-card-template>
+
 </div>
 <div class="someSpace"></div>
