@@ -8,13 +8,13 @@ import { map } from 'rxjs/operators';
 export class RecipeService {
 
   baseURL = "http://localhost:3011";
-  project: any;
+  //project: any;
 
   constructor(private http: HttpClient) { }
 
   public recipeList():Observable<Irecipes[]>{
     return this.http.get<{data: Irecipes[]}>(this.baseURL+'/recipes').pipe(
-      map(this.project, (response: { [x: string]: any; }) => response['data'])
+      map(response => response['data'])
       );
   }
 
