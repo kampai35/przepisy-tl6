@@ -3,6 +3,25 @@
   margin: auto;
   margin-top: 2rem;
   width: 1200px;
+
+  //template missing
+  mat-icon{ vertical-align: middle; }
+  .foodImage{
+    img{
+      width: 300px;
+      height: 225px;
+    }
+  }
+  .shortDescription{
+    font-size: 16px;
+    width: 70%;
+    margin-top: 20px;
+  }
+  .mat-raised-button.mat-primary{
+    background-color: #ffba70;
+    padding: 5px 20px 5px 20px;
+    font-size: 24px;
+  }
 }
 
 .someSpace{

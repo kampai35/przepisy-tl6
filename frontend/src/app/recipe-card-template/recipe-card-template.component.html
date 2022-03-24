@@ -5,9 +5,7 @@
     <mat-expansion-panel-header *ngIf="!panelOpenState">
       <!-- closed card header title -->
       <mat-panel-title>
-        <div class="title">
-          <h2>Kurczak w sosie</h2>
-        </div>
+        <h2><ng-content select=".title"></ng-content></h2>
 
         <div class="rating">
           <mat-icon>star</mat-icon>
@@ -22,74 +20,59 @@
       <mat-panel-description>
         <!-- time -->
         <div class="prepTime">
-          <mat-icon>timelapse</mat-icon>
-          <span class="time"> 1h 30min</span>
+          <ng-content select=".time"></ng-content>
         </div>
 
         <!-- difficulty -->
         <div class="difficulty">
-          <span class="difficultyText">poziom trudności </span>
-          <mat-icon>local_fire_department</mat-icon>
-          <mat-icon>local_fire_department</mat-icon>
-          <mat-icon>local_fire_department</mat-icon>
+          <ng-content select=".fireIcons"></ng-content>
         </div>
 
         <!-- tags -->
         <div class="tags">
-          <span class="tagItem">mięso </span>
-          <span class="tagItem">masło </span>
-          <span class="more"><mat-icon>more_horiz</mat-icon></span>
+          <ng-content select=".tagItem"></ng-content>
         </div>
       </mat-panel-description>
     </mat-expansion-panel-header>
 
-    <!-- fix - open header -->
+    <!-- open header -->
     <mat-expansion-panel-header *ngIf="panelOpenState">
       <!-- full card header title -->
       <mat-panel-title>
-        <div class="foodImage">
-          <img src="https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/DA2CE7B2-213D-47CD-BC65-8746BF251207/Derivates/ac919776-333a-491f-adeb-f584db66502f.jpg">
-        </div>
+        <ng-content select=".foodImage"></ng-content>
       </mat-panel-title>
 
       <!-- full card description -->
       <mat-panel-description>
         <div class="title">
           <h1>
-            <span class="recipeTitle">Kurczak w sosie</span>
+            <ng-content select=".recipeBigTitle"></ng-content>
             <mat-icon class="fav">favorite</mat-icon>
           </h1>
         </div>
 
         <!-- time and difficulty -->
         <div class="prepTime">
-          <mat-icon>timelapse</mat-icon>
-          <span class="time"> 1h 30min</span>
+          <ng-content select=".timeOpen"></ng-content>
         </div>
 
         <div class="difficulty">
-          <span class="difficultyText">poziom trudności </span>
-          <mat-icon>local_fire_department</mat-icon>
-          <mat-icon>local_fire_department</mat-icon>
-          <mat-icon>local_fire_department</mat-icon>
+          <ng-content select=".fireIconsOpen"></ng-content>
         </div>
 
         <!-- short description -->
-        <div class="shortDescription">
-          <span class="shortDescriptionContent">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis blandit lectus sem, id maximus justo consequat vestibulum. In pellentesque tincidunt mauris, et bibendum nibh lacinia eu. Nunc auctor commodo velit, vitae condimentum orci gravida sit amet. Donec maximus lectus dolor, non dictum magna eleifend ut.
-          </span>
-        </div>
+        <ng-content select=".shortDescription"></ng-content>
+
       </mat-panel-description>
     </mat-expansion-panel-header>
 
     <!-- body tab (mat-expansion-panel-body)-->
     <div class="bodyContainer">
       <!-- title -->
+      <ng-content select="selector"></ng-content>
       <div class="recipeTitle">
-        <div class="title">
-          <h2>Kurczak w sosie</h2>
-        </div>
+          <h2><ng-content select=".titleInBody"></ng-content></h2>
+
         <div class="rating">
           <mat-icon>star</mat-icon>
           <mat-icon>star</mat-icon>
@@ -98,14 +81,14 @@
           <mat-icon>star</mat-icon>
         </div>
       </div>
-      <!-- tags -->
+      <!-- tags
       <div class="tag">
         <span class="tag-item">mięso</span>
         <span class="tag-item">coś innego</span>
-      </div>
+      </div> -->
       <!-- button -->
       <div class="recipeButton">
-        <button mat-raised-button color="primary">PRZEPIS</button>
+        <ng-content select=".button"></ng-content>
       </div>
     </div>
 

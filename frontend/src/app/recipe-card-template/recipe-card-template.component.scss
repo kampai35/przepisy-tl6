@@ -44,10 +44,8 @@
   .bodyContainer{
     display: flex;
   }
-  .recipeTitle{
-    width: 20%;
-  }
-  .tag{
+  .tagItem{
+    color: red;
   }
   .recipeButton{
     flex: auto;
@@ -92,12 +90,6 @@
     }
 
     .prepTime, .difficulty{ @include fullCardDescElement(); }
-
-    .shortDescription{
-      font-size: 16px;
-      width: 70%;
-      margin-top: 20px;
-    }
   }
 
 
