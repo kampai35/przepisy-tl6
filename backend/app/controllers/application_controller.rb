@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::API
-#   before_action :authenticate_request!
+  before_action :authenticate_request!
   before_action :initialize
   before_action :find_collection, only: [:index]
   before_action :find_resource, except: [:index, :create]
