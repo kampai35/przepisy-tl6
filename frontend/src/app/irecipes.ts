@@ -1,6 +1,7 @@
 export interface Irecipes {
   id: any;
   description: string;
+  short_description: string;
   ingredients: Iingredients[];
   level: number;
   name: string;
