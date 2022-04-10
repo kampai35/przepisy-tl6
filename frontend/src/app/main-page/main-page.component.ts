@@ -1,5 +1,7 @@
 import { RecipeService } from './../recipe.service';
 import { Component, OnInit } from '@angular/core';
+import { Irecipes } from '../irecipes';
+import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-main-page',
@@ -7,6 +9,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-page.component.scss']
 })
 export class MainPageComponent implements OnInit {
+  descriptionSpace: string = '';
+  recipeDataObject: Irecipes[] = [];
+  name: string = '';
 
   constructor(
     private recipeService: RecipeService,
@@ -14,7 +19,9 @@ export class MainPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.recipeService.recipeList().subscribe(recipeList =>{
-      console.log('response z api', recipeList);
+      const recipeDataObject: Irecipes[] = [...recipeList];
+      this.recipeDataObject = recipeDataObject;
+
     });
   }
 
