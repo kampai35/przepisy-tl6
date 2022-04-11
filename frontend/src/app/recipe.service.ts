@@ -11,7 +11,7 @@ export class RecipeService {
   constructor(private http: HttpClient) { }
 
   public recipeList():Observable<Irecipes[]>{
-    return this.http.get<{data: Irecipes[]}>(this.baseURL+'/recipes', {headers: { Authorization: '608e70c77c73cb316571d7deaef1ba88739a4b5d60d4a480345a58ea84a25f0cfadd83053c1316' }}).pipe(
+    return this.http.get<{data: Irecipes[]}>(this.baseURL+'/recipes', {headers: { Authorization: '2c6a87322f5f999c3c94b8ce97ae237d138943b027debea71ad9948de9ce612c05e9fb6364f0e9' }}).pipe(
       map(response => response['data'])
       );
   }

@@ -13,14 +13,14 @@
         <mat-label>E-mail:</mat-label>
         <input
           matInput
-          formControlName="email"
-          id="email"
+          formControlName="username"
+          id="username"
           type="email"
           placeholder = "np. jkowalski@gmail.com"
           required
           >
 
-          <mat-error *ngIf="email?.invalid">{{emailErrorMessage}}</mat-error>
+          <mat-error *ngIf="username?.invalid">{{emailErrorMessage}}</mat-error>
       </mat-form-field>
     </div>
 
@@ -44,5 +44,5 @@
 
 <div class="modal-footer">
   <button type="button" mat-button color="basic" data-dismiss="modal" (click)="closeModal()">Przywróć hasło</button>
-  <button type="button" mat-button color="primary" (click)="closeModal('zalogowano')">Zaloguj</button>
+  <button type="button" mat-button color="primary" (click)="submit(loginForm)">Zaloguj</button>
 </div>
