@@ -1,8 +1,8 @@
-export interface Irecipes {
+export interface Irecipe {
   id: any;
   description: string;
   short_description: string;
-  ingredients: Iingredients[];
+  ingredients: Iingredient[];
   level: number;
   name: string;
   single_pot: boolean;
@@ -10,7 +10,8 @@ export interface Irecipes {
   time: number;
   user_id: any;
 }
-interface Iingredients{
+
+interface Iingredient {
   id: any;
   amount: number;
   name: string

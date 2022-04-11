@@ -1,7 +1,6 @@
-import { RecipeService } from './../recipe.service';
+import { RecipeService } from '../../services/recipe.service';
 import { Component, OnInit } from '@angular/core';
-import { Irecipes } from '../irecipes';
-import { ThrowStmt } from '@angular/compiler';
+import { Irecipe } from '../../interfaces/irecipe';
 
 @Component({
   selector: 'app-main-page',
@@ -9,8 +8,7 @@ import { ThrowStmt } from '@angular/compiler';
   styleUrls: ['./main-page.component.scss']
 })
 export class MainPageComponent implements OnInit {
-  descriptionSpace: string = '';
-  recipeDataObject: Irecipes[] = [];
+  recipeDataObject: Irecipe[] = [];
   name: string = '';
 
   constructor(
@@ -19,9 +17,8 @@ export class MainPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.recipeService.recipeList().subscribe(recipeList =>{
-      const recipeDataObject: Irecipes[] = [...recipeList];
+      const recipeDataObject: Irecipe[] = [...recipeList];
       this.recipeDataObject = recipeDataObject;
-
     });
   }
 

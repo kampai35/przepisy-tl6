@@ -1,4 +1,4 @@
-import { UserService } from './../user.service';
+import { UserService } from '../../services/user.service';
 import { Component, Input } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
