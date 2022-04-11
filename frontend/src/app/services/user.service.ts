@@ -13,9 +13,7 @@ export class UserService {
 
   public login(user: Iuser):Observable<Iuser>{
     return this.http.post<{data: Iuser}>(this.baseURL+'/users/token', {data: user}).pipe(
-      map((response)=> {
-        return response.data;
-      }),
+      map((response) => response.data),
       tap((response: Iuser) => {
         //zamienia obiekty na jsonowy stringi
         localStorage.setItem('user', JSON.stringify(response));
