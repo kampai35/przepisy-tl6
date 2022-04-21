@@ -3,11 +3,11 @@ import { Component, OnInit } from '@angular/core';
 import { Irecipe } from '../../interfaces/irecipe';
 
 @Component({
-  selector: 'app-main-page',
-  templateUrl: './main-page.component.html',
-  styleUrls: ['./main-page.component.scss']
+  selector: 'app-main-list',
+  templateUrl: './list-pape.component.html',
+  styleUrls: ['./list-pape.component.scss']
 })
-export class MainPageComponent implements OnInit {
+export class ListPapeComponent implements OnInit {
   recipeDataObject: Irecipe[] = [];
   name: string = '';
 

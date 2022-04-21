@@ -2,6 +2,8 @@ class User < Document
   include Mongoid::Document
   before_save :encrypt_password
 
+  field :image, type: String
+  field :email, type: String
   field :username, type: String
   field :password, type: String
   field :access_token, type: String, default: ''
@@ -43,7 +45,7 @@ class User < Document
   end
 
   def update_expires!
-    self.expires_in = Time.now + 2.hours
+    self.expires_in = Time.now + 7.days
     self.save
   end
 

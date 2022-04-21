@@ -38,9 +38,13 @@ class ApplicationController < ActionController::API
     @resource.destroy
   end
 
+  def find_collection_conditions
+      @collection = @collection.order(created_at: :desc)
+  end
+
   def find_collection
     @collection = scope.all
-    @collection = @collection.order(created_at: :desc)
+    find_collection_conditions
   end
 
   def find_resource

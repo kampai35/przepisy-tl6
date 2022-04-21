@@ -5,6 +5,8 @@ class UsersController < ApplicationController
   def initialize
     @permitted_params = [
         :username,
+        :email,
+        :image,
         :password
     ]
   end
