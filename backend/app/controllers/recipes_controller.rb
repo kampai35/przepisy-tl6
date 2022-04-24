@@ -27,7 +27,10 @@ class RecipesController < ApplicationController
     filters = request.query_parameters
 
     if filters[:text]
-      @collection = @collection.any_of({ :name => /.*#{filters[:text]}.*/i })
+      @collection = @collection
+        .or(:tags => /.*#{filters[:text]}.*/i)
+        .or(:description => /.*#{filters[:text]}.*/i)
+        .or(:name => /.*#{filters[:text]}.*/i)
     end
 
     @collection = @collection.order(filters[:order])

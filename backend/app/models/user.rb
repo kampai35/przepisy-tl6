@@ -4,13 +4,12 @@ class User < Document
 
   field :image, type: String
   field :email, type: String
-  field :username, type: String
   field :password, type: String
   field :access_token, type: String, default: ''
   field :expires_in, type: Integer, default: 0
 
-  validates_presence_of :username, :password
-  validates :username, uniqueness: true, length: {minimum: 5, maximum: 25}
+  validates_presence_of :email, :password
+  validates :email, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
 
   validate do
     if password && (new_record? || password_changed?)
@@ -33,8 +32,8 @@ class User < Document
       user
   end
 
-  def self.find_by_username_and_password(username:, password:)
-      resource = User.where(username: username).first
+  def self.find_by_email_and_password(email:, password:)
+      resource = User.where(email: email).first
       return if resource.nil? || BCrypt::Password.new(resource.password) != password
       resource
   end

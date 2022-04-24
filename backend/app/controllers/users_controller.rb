@@ -4,7 +4,6 @@ class UsersController < ApplicationController
 
   def initialize
     @permitted_params = [
-        :username,
         :email,
         :image,
         :password
@@ -12,7 +11,7 @@ class UsersController < ApplicationController
   end
 
   def token
-    @resource = User.find_by_username_and_password(username: scope_params[:username], password: scope_params[:password])
+    @resource = User.find_by_email_and_password(email: scope_params[:email], password: scope_params[:password])
     unless @resource.nil?
       @resource.refresh_token
       render json: serialized_resource
@@ -37,7 +36,7 @@ class UsersController < ApplicationController
   def update_me
       @resource = @current_user
 
-      unless User.find_by_username_and_password(username: @current_user.username, password: scope_params[:current_password])
+      unless User.find_by_email_and_password(email: @current_user.email, password: scope_params[:current_password])
           render json: {errors: {:current_password => ["is incorrect"]}}, status: :unprocessable_entity
       else
           if @resource.update(scope_params)

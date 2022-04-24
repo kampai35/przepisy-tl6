@@ -4,6 +4,8 @@ class ApplicationController < ActionController::API
   before_action :find_collection, only: [:index]
   before_action :find_resource, except: [:index, :create]
 
+  PAGE_LIMIT = 10.freeze
+
   def index
     render json: serialized_collection
   end
@@ -39,10 +41,19 @@ class ApplicationController < ActionController::API
   end
 
   def find_collection_conditions
-      @collection = @collection.order(created_at: :desc)
+    @collection = @collection.order(created_at: :desc)
+  end
+
+  def current_page
+    params[:page].to_i || 0
   end
 
   def find_collection
+    find_collection_scope
+    @collection = @collection.limit(PAGE_LIMIT).offset(current_page * PAGE_LIMIT)
+  end
+
+  def find_collection_scope
     @collection = scope.all
     find_collection_conditions
   end
@@ -83,7 +94,14 @@ class ApplicationController < ActionController::API
   end
 
   def serialized_collection
-    {data: @collection}
+    total_amount = find_collection_scope.count
+    total_pages = (total_amount / PAGE_LIMIT).ceil
+    {
+        data: @collection,
+        current_page: current_page,
+        next_page: (current_page+1) > total_pages ? nil : current_page+1,
+        prev_page: (current_page-1) < 0 ? nil : current_page-1
+    }
   end
 
   def serialized_resource

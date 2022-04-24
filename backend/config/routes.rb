@@ -5,4 +5,7 @@ Rails.application.routes.draw do
     get :me, on: :collection, :action => :me
     patch :me, on: :collection, :action => :update_me
   end
+
+  get '/common/tags', action: :tags, controller: 'common'
+  get '/common/homepage', action: :homepage, controller: 'common'
 end
