@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -20,7 +21,8 @@ import { MatButtonModule } from '@angular/material/button';
     BrowserModule,
     ComponentsModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    RouterModule
   ]
 })
 export class PagesModule { }

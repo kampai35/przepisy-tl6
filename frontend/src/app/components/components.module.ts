@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { NavbarComponent } from './navbar/navbar.component';
 
@@ -29,7 +30,7 @@ import { MatMenuModule } from '@angular/material/menu';
     RegisterFormComponent,
     FooterComponent,
     RecipeCardTemplateComponent,
-    FiltrAndSortComponent
+    FiltrAndSortComponent,
   ],
   exports: [
     NavbarComponent,
@@ -54,7 +55,8 @@ import { MatMenuModule } from '@angular/material/menu';
     MatAutocompleteModule,
     MatExpansionModule,
     MatSelectModule,
-    MatMenuModule
+    MatMenuModule,
+    RouterModule
   ],
 })
 export class ComponentsModule { }

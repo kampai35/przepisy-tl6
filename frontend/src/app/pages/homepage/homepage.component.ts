@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-homepage',
@@ -7,11 +6,5 @@ import { Router } from '@angular/router';
   styleUrls: ['./homepage.component.scss']
 })
 export class HomepageComponent {
-  constructor(
-    private router: Router
-  ){}
 
-  btnClickToList(){
-    this.router.navigateByUrl('/lista-przepisow');
-  }
 }

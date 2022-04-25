@@ -16,14 +16,6 @@ export class NavbarComponent{
     private router: Router
   ) { }
 
-  //routing
-  toHomepage(){
-    this.router.navigateByUrl('');
-  }
-  toList(){
-    this.router.navigateByUrl('/lista-przepisow');
-  }
-
   //login & register
   openLoginForm(){
     const modalRef = this.modalService.open(LoginFormComponent,

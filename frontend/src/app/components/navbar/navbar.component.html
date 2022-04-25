@@ -1,6 +1,6 @@
 <mat-toolbar class="toolbar">
   <div class="content">
-    <span (click)="toHomepage()" class="logo">FajneLogo</span>
+    <span routerLink='' class="logo">FajneLogo</span>
 
     <span class="navSpacer"></span>
 
@@ -13,7 +13,7 @@
       <mat-icon>more_vert</mat-icon>
     </button>
       <mat-menu #beforeMenu="matMenu" xPosition="before">
-        <button mat-menu-item (click)="toList()">Lista Przepisów</button>
+        <button mat-menu-item routerLink='/lista-przepisow'>Lista Przepisów</button>
       </mat-menu>
     </div>
 </mat-toolbar>
