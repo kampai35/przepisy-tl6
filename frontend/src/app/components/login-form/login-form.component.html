@@ -13,14 +13,14 @@
         <mat-label>E-mail:</mat-label>
         <input
           matInput
-          formControlName="username"
-          id="username"
+          formControlName="email"
+          id="email"
           type="email"
           placeholder = "np. jkowalski@gmail.com"
           required
           >
 
-          <mat-error *ngIf="username?.invalid">{{emailErrorMessage}}</mat-error>
+          <mat-error *ngIf="email?.invalid">{{emailErrorMessage}}</mat-error>
       </mat-form-field>
     </div>
 
