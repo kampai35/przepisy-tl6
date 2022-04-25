@@ -21,4 +21,13 @@ export class UserService {
       //catchError()
       );
   }
+
+  public register(user: Iuser):Observable<Iuser>{
+    return this.http.post<{data: Iuser}>(this.baseURL+'/users', {data: user}).pipe(
+      map((response) => response.data)
+    )
+  }
+
+
+
 }

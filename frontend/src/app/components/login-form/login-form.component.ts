@@ -18,7 +18,7 @@ export class LoginFormComponent {
   ) { }
 
   loginForm = new FormGroup({
-    'username': new FormControl('', [
+    'email': new FormControl('', [
       Validators.required,
       Validators.email
     ]),
@@ -27,12 +27,12 @@ export class LoginFormComponent {
     ])
   });
 
-  get username(){ return this.loginForm.get('username');}
+  get email(){ return this.loginForm.get('email');}
   get emailErrorMessage(){
-    if (this.username?.hasError('required'))
+    if (this.email?.hasError('required'))
       return 'Podaj adres E-mail.';
 
-    return this.username?.hasError('email') ? 'Niepoprawny adres e-mail.' : '';
+    return this.email?.hasError('email') ? 'Niepoprawny adres e-mail.' : '';
   }
 
   //Password field validation
@@ -41,7 +41,7 @@ export class LoginFormComponent {
     if (this.password?.hasError('required'))
       return 'Podaj hasło.';
 
-    return this.username?.hasError('password') ? 'Złe hasło' : '';
+    return this.email?.hasError('password') ? 'Złe hasło' : '';
   }
 
 

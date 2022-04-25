@@ -7,63 +7,8 @@
 </div>
 
 <div class="modal-body">
-  <!-- <form #f="ngForm">
-
-    <div class="form-group">
-      <mat-form-field appearance="fill">
-        <mat-label>Nazwa użytkownika:</mat-label>
-        <input
-        matInput
-        placeholder="np. kampai"
-        type="text"
-        required
-        ngModel
-        #username="ngModel" name="username" id="username">
-      </mat-form-field>
-    </div>
-
-
-    <div class="form-group">
-      <mat-form-field appearance="fill">
-        <mat-label>E-mail:</mat-label>
-        <input
-        matInput
-        placeholder="np. jkowalski@gmail.com"
-        type="email"
-        required
-        ngModel email="true"
-        #email="ngModel" name="email" id="email">
-      </mat-form-field>
-    </div>
-
-
-    <div class="form-group">
-      <mat-form-field>
-        <mat-label>Hasło:</mat-label>
-        <input
-        matInput
-        type="password"
-        ngModel
-        required
-        #password="ngModel" name="password" id="password">
-      </mat-form-field>
-    </div>
-
-    <div class="form-group">
-      <mat-form-field>
-        <mat-label>Potwierdź hasło:</mat-label>
-        <input
-        matInput
-        type="password"
-        ngModel
-        required
-        #passwordConfirm="ngModel" name="passwordConfirm" id="passwordConfirm">
-      </mat-form-field>
-    </div>
-
-  </form> -->
-  <form [formGroup]="loginForm">
-    <div class="form-group">
+  <form [formGroup]="registerForm">
+    <!-- <div class="form-group">
       <mat-form-field>
         <mat-label>Nazwa użytkownika:</mat-label>
         <input
@@ -77,7 +22,7 @@
 
           <mat-error *ngIf="username?.invalid">{{usernameErrorMessage}}</mat-error>
       </mat-form-field>
-    </div>
+    </div> -->
 
     <div class="form-group">
       <mat-form-field>
@@ -129,5 +74,5 @@
 </div>
 
 <div class="modal-footer">
-  <button type="button" mat-button color="primary" (click)="closeModal('Zarejestrowano')">Zarejestruj</button>
+  <button type="button" mat-button color="primary" (click)="submit(registerForm)">Zarejestruj</button>
 </div>
