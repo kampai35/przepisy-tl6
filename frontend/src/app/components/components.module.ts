@@ -7,7 +7,7 @@ import { FooterComponent } from './footer/footer.component';
 import { RecipeCardTemplateComponent } from './recipe-card-template/recipe-card-template.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FiltrAndSortComponent } from './filtr-and-sort/filtr-and-sort.component';
-//material
+
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDividerModule} from '@angular/material/divider';
@@ -20,6 +20,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ServicesModule } from '../services/services.module';
 import { BrowserModule } from '@angular/platform-browser';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,6 @@ import { BrowserModule } from '@angular/platform-browser';
     BrowserModule,
     NgbModule,
     ReactiveFormsModule,
-    //material
     MatToolbarModule,
     MatButtonModule,
     MatDividerModule,
@@ -53,7 +53,8 @@ import { BrowserModule } from '@angular/platform-browser';
     MatFormFieldModule,
     MatAutocompleteModule,
     MatExpansionModule,
-    MatSelectModule
+    MatSelectModule,
+    MatMenuModule
   ],
 })
 export class ComponentsModule { }

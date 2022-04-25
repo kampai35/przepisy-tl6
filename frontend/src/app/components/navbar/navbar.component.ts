@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Component } from '@angular/core';
 import { LoginFormComponent } from '../login-form/login-form.component';
 import { RegisterFormComponent } from '../register-form/register-form.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -8,15 +9,22 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent{
 
   constructor(
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    private router: Router
   ) { }
 
-  ngOnInit(): void {
+  //routing
+  toHomepage(){
+    this.router.navigateByUrl('');
+  }
+  toList(){
+    this.router.navigateByUrl('/lista-przepisow');
   }
 
+  //login & register
   openLoginForm(){
     const modalRef = this.modalService.open(LoginFormComponent,
     {
@@ -24,17 +32,6 @@ export class NavbarComponent implements OnInit {
       keyboard: false,
       backdrop: 'static'
     });
-
-    //WAŻNE - podwaliny do tego, co dalej
-    // let data = {
-    //   prop1: 'x'
-    // }
-
-    // modalRef.componentInstance.fromParent = data;
-    // modalRef.result.then((result) => {
-    //   //result
-    // }, (reason) => {
-    // });
   }
   openRegisterForm(){
     const modalRef = this.modalService.open(RegisterFormComponent,

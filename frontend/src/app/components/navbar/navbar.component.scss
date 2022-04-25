@@ -8,15 +8,17 @@
     width: 1200px;
     display: flex;
 
+    .logo{ cursor: pointer; }
+
     .navSpacer{ flex: auto; }
 
     .menu{
+      cursor: pointer;
       .menuItem{ margin-left: 20px; }
       .mat-flat-button{
         font-size: 18px;
         background-color: rgba(255, 255, 255, 0);
       }
-
       .menuItem:nth-child(2){
         .mat-flat-button{ color: #a2a2a2; }
       }
