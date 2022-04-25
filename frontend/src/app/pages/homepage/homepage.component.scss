@@ -1,0 +1,94 @@
+*{
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+}
+@mixin headerSetup{
+  font-size: 2rem;
+  font-weight: 700;
+}
+@mixin niceButton{
+  color: white;
+  padding: 10px 20px 10px 20px;
+  border: 1px solid black;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0);
+  touch-action: manipulation;
+}
+@mixin niceButtonAfter{
+  content: "";
+  background-color: #ffba70;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+@mixin niceButtonHoverAfter{
+  top: 0px;
+  left: 0px;
+}
+/////////////////////
+h1{ @include headerSetup(); }
+
+///////////////////////////
+blockquote{ margin-top: 3rem; }
+.underline{
+  margin: auto;
+  margin-bottom: 6rem;
+  max-width: 250px;
+  border: 2px solid rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.rand{
+  width: 100%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 3rem;
+
+  .randLeft{
+    background-image: url("https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/DA2CE7B2-213D-47CD-BC65-8746BF251207/Derivates/ac919776-333a-491f-adeb-f584db66502f.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(3px);
+    width: 50%;
+    height: 100%;
+    box-sizing: border-box;
+  }
+  .randLeftImg{
+    position: absolute;
+    display: flex;
+    width: 50%;
+    height: 400px;
+    align-items: center;
+    justify-content: center;
+
+    img{ height: 100%; }
+  }
+  .randRight{
+    width: 50%;
+    .mat-button.mat-primary{
+      @include niceButton();
+       margin-top: 1rem;
+       font-size: 16px;
+    }
+    .mat-button.mat-primary:after { @include niceButtonAfter(); }
+    .mat-button.mat-primary:hover:after { @include niceButtonHoverAfter(); }
+  }
+}
+
+.fullList{
+  margin-bottom: 6rem;
+
+  .mat-flat-button.mat-basic{
+    @include headerSetup();
+    @include niceButton();
+  }
+  .mat-flat-button.mat-basic:after { @include niceButtonAfter(); }
+  .mat-flat-button.mat-basic:hover:after { @include niceButtonHoverAfter(); }
+}
