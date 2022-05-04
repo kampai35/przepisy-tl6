@@ -1,48 +1,37 @@
 <div class="container">
   <app-filtr-and-sort></app-filtr-and-sort>
 
-  <app-recipe-card-template *ngFor="let recipeData of recipeDataObject">
-    <div class="title">{{recipeData.name}}</div>
-    <div class="time"><mat-icon>timelapse</mat-icon>{{recipeData.time}} min</div>
-    <!-- Tu zmienić z tekstowego na 1-3 -->
-    <div class="fireIcons">
-      poziom trudności:
-      <mat-icon>local_fire_department</mat-icon>
-      <mat-icon>local_fire_department</mat-icon>
-      <mat-icon>local_fire_department</mat-icon>
-    </div>
-    <div class="tagItem">
-      <!-- dorzucić tu cały osobny komponent z chipsami
-      https://material.angular.io/components/chips/examples -->
-      <span class="tagItem">mięso </span>
-      <span class="tagItem">masło </span>
-      <span class="more"><mat-icon>more_horiz</mat-icon></span>
-    </div>
-    <!-- open -->
-    <!-- dorzucić img src z url z bazy -->
-    <div class="foodImage">
-      <img src="https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/DA2CE7B2-213D-47CD-BC65-8746BF251207/Derivates/ac919776-333a-491f-adeb-f584db66502f.jpg">
-    </div>
-    <div class="recipeBigTitle">{{recipeData.name}}</div>
-    <div class="timeOpen"><mat-icon>timelapse</mat-icon>{{recipeData.time}} min</div>
+  <virtual-scroller #scroll [items]="recipeDataObject">
+    <app-recipe-card-template class="vsList" *ngFor="let recipeData of scroll.viewPortItems">
+      <div class="title">{{recipeData.name}}</div>
 
-    <div class="fireIconsOpen">
-      poziom trudności:
-      <mat-icon>local_fire_department</mat-icon>
-      <mat-icon>local_fire_department</mat-icon>
-      <mat-icon>local_fire_department</mat-icon>
-    </div>
+      <div class="stars">
+        <mat-icon>star</mat-icon>
+        <mat-icon>star</mat-icon>
+        <mat-icon>star</mat-icon>
+        <mat-icon>star</mat-icon>
+        <mat-icon>star</mat-icon>
+      </div>
 
-    <div class="shortDescription">{{recipeData.short_description}}</div>
-    <div class="titleInBody">{{recipeData.name}}</div>
+      <div class="fireIcons">
+        <mat-icon>local_fire_department</mat-icon>
+        <mat-icon>local_fire_department</mat-icon>
+        <mat-icon>local_fire_department</mat-icon>
+      </div>
 
-     <div class="button">
-      <button mat-raised-button color="primary">PRZEPIS</button>
-     </div>
-  </app-recipe-card-template>
+      <div class="time">{{recipeData.time}} min</div>
 
+      <div class="shortDescription">{{recipeData.short_description}}</div>
 
+      <div class="tagItem">
+        <!-- dorzucić tu cały osobny komponent z chipsami
+        https://material.angular.io/components/chips/examples -->
+        <span class="tagItem">mięso </span>
+        <span class="tagItem">masło </span>
+        <span class="more"><mat-icon>more_horiz</mat-icon></span>
+      </div>
+    </app-recipe-card-template>
+  </virtual-scroller>
 </div>
-
 
 <div class="someSpace"></div>

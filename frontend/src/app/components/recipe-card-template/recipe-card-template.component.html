@@ -1,96 +1,26 @@
-<mat-accordion>
-  <mat-expansion-panel (opened)="panelOpenState = true"
-                       (closed)="panelOpenState = false">
+<mat-card>
+  <mat-card-header>
+    <mat-card-title><h2><ng-content select=".title"></ng-content></h2></mat-card-title>
+    <mat-card-subtitle>
+      <ng-content class="starsBlock" select=".stars"></ng-content>
+    </mat-card-subtitle>
+  </mat-card-header>
 
-    <mat-expansion-panel-header *ngIf="!panelOpenState">
-      <!-- closed card header title -->
-      <mat-panel-title>
-        <h2><ng-content select=".title"></ng-content></h2>
-
-        <div class="rating">
-          <mat-icon>star</mat-icon>
-          <mat-icon>star</mat-icon>
-          <mat-icon>star</mat-icon>
-          <mat-icon>star</mat-icon>
-          <mat-icon>star</mat-icon>
+  <mat-card-content>
+    <img mat-card-lg-image src="https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/DA2CE7B2-213D-47CD-BC65-8746BF251207/Derivates/ac919776-333a-491f-adeb-f584db66502f.jpg" alt="">
+    <div class="content">
+      <div class="descPart">
+        <div class="icons">
+          poziom trudności: <ng-content select=".fireIcons"></ng-content>
+          <mat-icon class="timeIcon">timelapse</mat-icon><ng-content select=".time"></ng-content>
         </div>
-      </mat-panel-title>
-
-      <!-- closed card description -->
-      <mat-panel-description>
-        <!-- time -->
-        <div class="prepTime">
-          <ng-content select=".time"></ng-content>
-        </div>
-
-        <!-- difficulty -->
-        <div class="difficulty">
-          <ng-content select=".fireIcons"></ng-content>
-        </div>
-
-        <!-- tags -->
-        <div class="tags">
-          <ng-content select=".tagItem"></ng-content>
-        </div>
-      </mat-panel-description>
-    </mat-expansion-panel-header>
-
-    <!-- open header -->
-    <mat-expansion-panel-header *ngIf="panelOpenState">
-      <!-- full card header title -->
-      <mat-panel-title>
-        <ng-content select=".foodImage"></ng-content>
-      </mat-panel-title>
-
-      <!-- full card description -->
-      <mat-panel-description>
-        <div class="title">
-          <h1>
-            <ng-content select=".recipeBigTitle"></ng-content>
-            <mat-icon class="fav">favorite</mat-icon>
-          </h1>
-        </div>
-
-        <!-- time and difficulty -->
-        <div class="prepTime">
-          <ng-content select=".timeOpen"></ng-content>
-        </div>
-
-        <div class="difficulty">
-          <ng-content select=".fireIconsOpen"></ng-content>
-        </div>
-
-        <!-- short description -->
         <ng-content select=".shortDescription"></ng-content>
-
-      </mat-panel-description>
-    </mat-expansion-panel-header>
-
-    <!-- body tab (mat-expansion-panel-body)-->
-    <div class="bodyContainer">
-      <!-- title -->
-      <ng-content select="selector"></ng-content>
-      <div class="recipeTitle">
-          <h2><ng-content select=".titleInBody"></ng-content></h2>
-
-        <div class="rating">
-          <mat-icon>star</mat-icon>
-          <mat-icon>star</mat-icon>
-          <mat-icon>star</mat-icon>
-          <mat-icon>star</mat-icon>
-          <mat-icon>star</mat-icon>
-        </div>
       </div>
-      <!-- tags
-      <div class="tag">
-        <span class="tag-item">mięso</span>
-        <span class="tag-item">coś innego</span>
-      </div> -->
-      <!-- button -->
-      <div class="recipeButton">
-        <ng-content select=".button"></ng-content>
-      </div>
+      <div class="tags"><ng-content select=".tagItem"></ng-content></div>
     </div>
+  </mat-card-content>
 
-  </mat-expansion-panel>
-</mat-accordion>
+  <mat-card-actions>
+    <button mat-raised-button color="primary">Przepis</button>
+  </mat-card-actions>
+</mat-card>

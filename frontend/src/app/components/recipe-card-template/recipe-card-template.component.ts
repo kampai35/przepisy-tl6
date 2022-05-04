@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-recipe-card-template',
   templateUrl: './recipe-card-template.component.html',
-  styleUrls: ['./recipe-card-template.component.scss']
+  styleUrls: ['./recipe-card-template.component.scss'],
 })
 export class RecipeCardTemplateComponent implements OnInit {
   panelOpenState = false;

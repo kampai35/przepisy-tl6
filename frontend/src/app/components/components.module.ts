@@ -22,6 +22,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ServicesModule } from '../services/services.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatMenuModule } from '@angular/material/menu';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { MatMenuModule } from '@angular/material/menu';
     MatExpansionModule,
     MatSelectModule,
     MatMenuModule,
-    RouterModule
+    RouterModule,
+    MatCardModule
   ],
 })
 export class ComponentsModule { }
