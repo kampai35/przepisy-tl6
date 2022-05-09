@@ -3,22 +3,34 @@
   margin: auto;
   margin-top: 2rem;
   width: 1200px;
-}
 
-virtual-scroller {
-  max-width: 1400px;
-  margin: auto;
-  height: 800px;
-
-  .vsList {
+  virtual-scroller {
+    max-width: 1000px;
     margin: auto;
-    display: block;
-    width: 90%;
-    height: 30px;
-    margin-bottom: 440px;
+    height: 700px;
+
+    .vsList {
+      margin: auto;
+      display: block;
+      width: 90%;
+      height: 30px;
+      margin-bottom: 300px;
+
+      .mat-mini-fab{
+        background-color: transparent;
+        mat-icon{ color: black; }
+      }
+      .fireIcons{
+        background: -webkit-linear-gradient(90deg, rgba(108,0,0,1) 0%, rgba(255,0,0,1) 41%, rgba(255,248,0,1) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .tagItem{
+        margin-bottom: 1rem;
+        color: black;
+      }
+    }
   }
 }
-
-.someSpace{
-  height: 600px;
-}
+.someSpace{ height: 300px; }

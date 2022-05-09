@@ -10,6 +10,7 @@ import { RecipePageComponent } from './recipe/recipe.component';
 import { NotFoundPageComponent } from './not-found/not-found.component';
 import { MatButtonModule } from '@angular/material/button';
 import { VirtualScrollerModule } from 'ngx-virtual-scroller';
+import { MatChipsModule } from '@angular/material/chips';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { VirtualScrollerModule } from 'ngx-virtual-scroller';
     MatIconModule,
     MatButtonModule,
     RouterModule,
-    VirtualScrollerModule
+    VirtualScrollerModule,
+    MatChipsModule
   ]
 })
 export class PagesModule { }

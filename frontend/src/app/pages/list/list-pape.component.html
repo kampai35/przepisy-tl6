@@ -13,23 +13,27 @@
         <mat-icon>star</mat-icon>
       </div>
 
-      <div class="fireIcons">
-        <mat-icon>local_fire_department</mat-icon>
-        <mat-icon>local_fire_department</mat-icon>
-        <mat-icon>local_fire_department</mat-icon>
+      <div class="editButton">
+        <button mat-mini-fab color="primary"><mat-icon>edit</mat-icon></button>
       </div>
 
-      <div class="time">{{recipeData.time}} min</div>
+      <div class="fireIcons">
+        <mat-icon *ngFor="let _ of [].constructor(recipeData.level)">local_fire_department</mat-icon>
+      </div>
+
+      <div class="time">{{recipeData.time }} min</div>
 
       <div class="shortDescription">{{recipeData.short_description}}</div>
 
       <div class="tagItem">
-        <!-- dorzucić tu cały osobny komponent z chipsami
-        https://material.angular.io/components/chips/examples -->
-        <span class="tagItem">mięso </span>
-        <span class="tagItem">masło </span>
-        <span class="more"><mat-icon>more_horiz</mat-icon></span>
+        <mat-chip-list aria-label="ingrSection">
+          <mat-chip disabled class="meat">Mięso</mat-chip>
+          <mat-chip disabled class="vegetable">Ogórek</mat-chip>
+          <mat-chip disabled class="dairy">Ser</mat-chip>
+          <mat-chip disabled class="more"><mat-icon>more_horiz</mat-icon></mat-chip>
+        </mat-chip-list>
       </div>
+
     </app-recipe-card-template>
   </virtual-scroller>
 </div>

@@ -1,26 +1,34 @@
 <mat-card>
   <mat-card-header>
-    <mat-card-title><h2><ng-content select=".title"></ng-content></h2></mat-card-title>
+    <!-- title and edit button -->
+    <mat-card-title>
+      <h2><ng-content select=".title"></ng-content></h2>
+      <div class="spacer"></div>
+      <ng-content class="edit" select=".editButton"></ng-content>
+    </mat-card-title>
+    <!-- stars -->
     <mat-card-subtitle>
       <ng-content class="starsBlock" select=".stars"></ng-content>
     </mat-card-subtitle>
   </mat-card-header>
 
   <mat-card-content>
+    <!-- photo -->
     <img mat-card-lg-image src="https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/DA2CE7B2-213D-47CD-BC65-8746BF251207/Derivates/ac919776-333a-491f-adeb-f584db66502f.jpg" alt="">
+    <!-- content block -->
     <div class="content">
       <div class="descPart">
         <div class="icons">
-          poziom trudności: <ng-content select=".fireIcons"></ng-content>
+          <span>Poziom trudności: </span><ng-content select=".fireIcons"></ng-content>
           <mat-icon class="timeIcon">timelapse</mat-icon><ng-content select=".time"></ng-content>
         </div>
+
         <ng-content select=".shortDescription"></ng-content>
       </div>
+
       <div class="tags"><ng-content select=".tagItem"></ng-content></div>
+
+      <button mat-stroked-button color="primary">Przepis</button>
     </div>
   </mat-card-content>
-
-  <mat-card-actions>
-    <button mat-raised-button color="primary">Przepis</button>
-  </mat-card-actions>
 </mat-card>
