@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //material
 import { ComponentsModule } from './components/components.module';
 import { PagesModule } from './pages/pages.module';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { PagesModule } from './pages/pages.module';
     BrowserAnimationsModule,
     ComponentsModule,
     PagesModule,
-    RouterModule
+    RouterModule,
+    MatIconModule
   ],
   providers: [HttpClientModule],
   bootstrap: [AppComponent]
