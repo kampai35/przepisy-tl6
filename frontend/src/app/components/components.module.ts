@@ -1,3 +1,4 @@
+import { EditFormComponent } from './edit-form/edit-form.component';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -32,6 +33,7 @@ import {MatCardModule} from '@angular/material/card';
     FooterComponent,
     RecipeCardTemplateComponent,
     FiltrAndSortComponent,
+    EditFormComponent
   ],
   exports: [
     NavbarComponent,
@@ -39,7 +41,8 @@ import {MatCardModule} from '@angular/material/card';
     RegisterFormComponent,
     FooterComponent,
     RecipeCardTemplateComponent,
-    FiltrAndSortComponent
+    FiltrAndSortComponent,
+    EditFormComponent
   ],
   imports: [
     ServicesModule,

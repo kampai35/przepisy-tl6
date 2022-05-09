@@ -1,3 +1,5 @@
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { EditFormComponent } from '../../components/edit-form/edit-form.component';
 import { RecipeService } from '../../services/recipe.service';
 import { Component, OnInit } from '@angular/core';
 import { Irecipe } from '../../interfaces/irecipe';
@@ -13,6 +15,7 @@ export class ListPapeComponent implements OnInit {
 
   constructor(
     private recipeService: RecipeService,
+    private modalService: NgbModal
   ) { }
 
   ngOnInit(): void {
@@ -20,6 +23,24 @@ export class ListPapeComponent implements OnInit {
       const recipeDataObject: Irecipe[] = [...recipeList];
       this.recipeDataObject = recipeDataObject;
     });
+  }
+
+  openEditForm(recipeData: Irecipe){
+    console.log(recipeData);
+    const modalRef = this.modalService.open(EditFormComponent,
+      {
+        windowClass: 'edit',
+        keyboard: false,
+        backdrop: 'static',
+      });
+      let data = {
+        object: recipeData,
+      }
+      modalRef.componentInstance.fromParent = data;
+      modalRef.result.then((result) => {
+        console.log(result + 'test');
+      }, (reason) => {
+      });
   }
 
 }
