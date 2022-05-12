@@ -24,6 +24,7 @@ import { ServicesModule } from '../services/services.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatMenuModule } from '@angular/material/menu';
 import {MatCardModule} from '@angular/material/card';
+import { MatChipsModule } from '@angular/material/chips';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import {MatCardModule} from '@angular/material/card';
     MatSelectModule,
     MatMenuModule,
     RouterModule,
-    MatCardModule
+    MatCardModule,
+    MatChipsModule
   ],
 })
 export class ComponentsModule { }

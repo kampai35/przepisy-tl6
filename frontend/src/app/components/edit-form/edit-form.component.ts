@@ -1,8 +1,10 @@
-import { Irecipe } from './../../interfaces/irecipe';
+import { Irecipe, Iingredient } from './../../interfaces/irecipe';
 import { RecipeService } from './../../services/recipe.service';
 import { Component, Input } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
+import {COMMA, ENTER} from '@angular/cdk/keycodes';
+import { MatChipInputEvent } from '@angular/material/chips';
 
 @Component({
   selector: 'app-edit-form',
@@ -10,7 +12,8 @@ import { FormGroup, Validators, FormControl } from '@angular/forms';
   styleUrls: ['./edit-form.component.scss']
 })
 export class EditFormComponent {
-  recipeDataObject: Irecipe[] = [];
+  addOnBlur = true;
+  readonly separatorKeysCodes = [ENTER, COMMA] as const;
 
   constructor(
     public activeModal: NgbActiveModal,
@@ -53,12 +56,28 @@ export class EditFormComponent {
     }
   }
 
-  submit(data?: any){
-    console.log(data);
-    this.recipe.editRecipe().subscribe(() =>{
-      console.log('edytowano');
-      this.closeModal();
-    });
-  }
+  // submit(data?: any){
+  //   console.log(data);
+  //   this.recipe.editRecipe(data).subscribe(() =>{
+  //     console.log('edytowano');
+  //     this.closeModal();
+  //   });
+  // }
 
+
+  // add(event: MatChipInputEvent): void {
+  //   const value = (event.value || '').trim();
+
+  //   // Add our fruit
+  //   if (value) {
+  //     const ingredients = this.editForm.value.ingriedients.push({name: value});
+  //   }
+
+  //   // Clear the input value
+  //   event.chipInput!.clear();
+  // }
+  // remove(x: Iingredient): void {
+  //   const ingredients = this.editForm.value.ingriedients.filter((item: Iingredient)=>item.name!==x.name);
+  //   this.editForm.patchValue({ingredients});
+  // }
 }

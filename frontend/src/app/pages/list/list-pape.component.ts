@@ -33,14 +33,9 @@ export class ListPapeComponent implements OnInit {
         keyboard: false,
         backdrop: 'static',
       });
-      let data = {
-        object: recipeData,
-      }
-      modalRef.componentInstance.fromParent = data;
-      modalRef.result.then((result) => {
-        console.log(result + 'test');
-      }, (reason) => {
-      });
+      // console.log(modalRef.componentInstance);\
+      modalRef.componentInstance.editForm.patchValue(recipeData);
+      console.log(modalRef.componentInstance.editForm._id);
   }
 
 }

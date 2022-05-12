@@ -1,5 +1,5 @@
 export interface Irecipe {
-  id: any;
+  _id: string;
   description: string;
   short_description: string;
   ingredients: Iingredient[];
@@ -11,8 +11,8 @@ export interface Irecipe {
   user_id: any;
 }
 
-interface Iingredient {
-  id: any;
+export interface Iingredient {
+  id: string;
   amount: number;
   name: string
 }
