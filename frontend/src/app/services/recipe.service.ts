@@ -1,4 +1,3 @@
-import { Icommon } from './../interfaces/icommon';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -22,15 +21,10 @@ export class RecipeService {
       map(response => response['data'])
       );
   }
+
   public getRecipe(id: string):Observable<Irecipe>{
     return this.http.get<{data: Irecipe}>(this.baseURL+'/recipes/'+id, {headers: { Authorization: JSON.parse(localStorage.getItem('user') || "")?.access_token}}).pipe(
       map(response => response['data'])
       );
   }
-
-  public homepageItems():Observable<Icommon[]>{
-    return this.http.get<{data: Icommon[]}>(this.baseURL+'/common/homepage', {headers: { Authorization: JSON.parse(localStorage.getItem('user') || "")?.access_token}}).pipe(
-      map(response => response['data'])
-      );
-    }
 }

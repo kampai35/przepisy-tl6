@@ -1,17 +1,18 @@
+@import '../../../styles.scss';
 .toolbar{
   position: sticky;
   background-color: rgba(255, 255, 255, 0);
-  box-shadow: 0 0px 5px #a2a2a2;
+  box-shadow: 0 0px 5px $lightColor;
 
   .madeBy{
     margin: auto;
     font-size: 12px;
-    color: #ffba70;
+    color: $themeColor;
 
     a{
-      color: #a2a2a2;
+      color: $lightColor;
       text-decoration: none;
     }
-    a:hover{ color: #ffba70 }
+    a:hover{ color: $themeColor }
   }
 }

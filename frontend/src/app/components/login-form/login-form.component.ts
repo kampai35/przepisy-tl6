@@ -35,7 +35,6 @@ export class LoginFormComponent {
     return this.email?.hasError('email') ? 'Niepoprawny adres e-mail.' : '';
   }
 
-  //Password field validation
   get password(){ return this.loginForm.get('password');}
   get passwordErrorMessage(){
     if (this.password?.hasError('required'))
@@ -44,16 +43,9 @@ export class LoginFormComponent {
     return this.email?.hasError('password') ? 'Złe hasło' : '';
   }
 
-
-
-
   closeModal(data?: any) {
-    if(data === null || data === undefined){
-      this.activeModal.dismiss();
-    }
-    else{
-      this.activeModal.close(data);
-    }
+    if(data === null || data === undefined){ this.activeModal.dismiss(); }
+    else{ this.activeModal.close(data); }
   }
 
   submit(data?: any){

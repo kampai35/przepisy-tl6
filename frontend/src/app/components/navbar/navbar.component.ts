@@ -1,4 +1,3 @@
-import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 import { LoginFormComponent } from '../login-form/login-form.component';
 import { RegisterFormComponent } from '../register-form/register-form.component';
@@ -12,8 +11,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 export class NavbarComponent{
 
   constructor(
-    private modalService: NgbModal,
-    private router: Router
+    private modalService: NgbModal
   ) { }
 
   //login & register
