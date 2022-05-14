@@ -1,9 +1,9 @@
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { NavbarComponent } from './navbar/navbar.component';
 
-import { LoginFormComponent } from './login-form/login-form.component';
-import { RegisterFormComponent } from './register-form/register-form.component';
 import { FooterComponent } from './footer/footer.component';
 import { RecipeCardTemplateComponent } from './recipe-card-template/recipe-card-template.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -18,26 +18,24 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { MatExpansionModule } from '@angular/material/expansion';
 import {MatSelectModule} from '@angular/material/select';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ServicesModule } from '../services/services.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatMenuModule } from '@angular/material/menu';
 import {MatCardModule} from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
     NavbarComponent,
-    LoginFormComponent,
-    RegisterFormComponent,
     FooterComponent,
     RecipeCardTemplateComponent,
     FiltrAndSortComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   exports: [
     NavbarComponent,
-    LoginFormComponent,
-    RegisterFormComponent,
     FooterComponent,
     RecipeCardTemplateComponent,
     FiltrAndSortComponent,
@@ -46,7 +44,6 @@ import { MatChipsModule } from '@angular/material/chips';
     ServicesModule,
     FormsModule,
     BrowserModule,
-    NgbModule,
     ReactiveFormsModule,
     MatToolbarModule,
     MatButtonModule,
@@ -60,7 +57,8 @@ import { MatChipsModule } from '@angular/material/chips';
     MatMenuModule,
     RouterModule,
     MatCardModule,
-    MatChipsModule
+    MatChipsModule,
+    MatDialogModule
   ],
 })
 export class ComponentsModule { }

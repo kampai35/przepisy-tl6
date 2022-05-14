@@ -1,0 +1,37 @@
+<h2 mat-dialog-title>Zaloguj się</h2>
+
+<div mat-dialog-content>
+  <form [formGroup]="login">
+    <!-- e-mail -->
+    <div>
+      <mat-form-field>
+        <mat-label>E-mail:</mat-label>
+        <input
+          matInput
+          formControlName="email"
+          type="email"
+          placeholder="example@gmail.com"
+        >
+        <mat-error *ngIf="email?.invalid">{{emailErrorMessage}}</mat-error>
+      </mat-form-field>
+    </div>
+    <!-- password -->
+    <div>
+      <mat-form-field>
+        <mat-label>Hasło:</mat-label>
+        <input
+          matInput
+          formControlName="password"
+          type="password"
+          placeholder="password"
+        >
+        <mat-error *ngIf="password?.invalid">{{passwordErrorMessage}}</mat-error>
+      </mat-form-field>
+    </div>
+  </form>
+</div>
+
+<div mat-dialog-actions>
+  <button type="button" mat-button color="basic" mat-dialog-close>Zamknij</button>
+  <button type="button" mat-button color="primary" (click)="submit(login)" [mat-dialog-close]="true">Zaloguj</button>
+</div>

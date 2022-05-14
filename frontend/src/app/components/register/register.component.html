@@ -1,62 +1,50 @@
-<div class="modal-header">
-  <h4 class="modal-title">Zarejestruj się</h4>
-  <div class="spacer"></div>
-  <button type="button" mat-mini-fab class="close" data-dismiss="modal" (click)="closeModal()">
-    <mat-icon>close</mat-icon>
-  </button>
-</div>
+<h2 mat-dialog-title>Zaloguj się</h2>
 
-<div class="modal-body">
-  <form [formGroup]="registerForm">
-    <div class="form-group">
+<div mat-dialog-content>
+  <form [formGroup]="register">
+    <!-- e-mail -->
+    <div>
       <mat-form-field>
         <mat-label>E-mail:</mat-label>
         <input
           matInput
           formControlName="email"
-          id="email"
           type="email"
-          placeholder = "np. jkowalski@gmail.com"
-          required
-          >
-
-          <mat-error *ngIf="email?.invalid">{{emailErrorMessage}}</mat-error>
+          placeholder="example@gmail.com"
+        >
+        <mat-error *ngIf="email?.invalid">{{emailErrorMessage}}</mat-error>
       </mat-form-field>
     </div>
-
-    <div class="form-group">
+    <!-- password -->
+    <div>
       <mat-form-field>
         <mat-label>Hasło:</mat-label>
         <input
           matInput
           formControlName="password"
-          id="password"
           type="password"
-          required
+          placeholder="password"
         >
-
         <mat-error *ngIf="password?.invalid">{{passwordErrorMessage}}</mat-error>
       </mat-form-field>
     </div>
-
-    <div class="form-group">
+    <!-- confirm password -->
+    <div>
       <mat-form-field>
         <mat-label>Powtórz hasło:</mat-label>
         <input
           matInput
           formControlName="confirmPassword"
-          id="confirmPassword"
           type="password"
-          required
+          placeholder="password"
         >
-
         <mat-error *ngIf="confirmPassword?.invalid">{{confirmPasswordErrorMessage}}</mat-error>
       </mat-form-field>
     </div>
-
   </form>
 </div>
 
-<div class="modal-footer">
-  <button type="button" mat-button color="primary" (click)="submit(registerForm)">Zarejestruj</button>
+<div mat-dialog-actions>
+  <button type="button" mat-button color="basic" mat-dialog-close>Zamknij</button>
+  <button type="button" mat-button color="primary" (click)="submit(register)" [mat-dialog-close]="true">Zarejestruj</button>
 </div>
