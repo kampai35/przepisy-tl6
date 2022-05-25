@@ -10,29 +10,12 @@ services:
             - global
         tty: true
         stdin_open: true
-        links:
-            - mongo
         ports:
             - 3011:3011
         labels:
             traefik.frontend.rule: "Host:api.przepisy.docker"
         volumes:
             - ./backend:/usr/src/app:cached
-            - /usr/src/app/tmp/db
-        restart: always
-    mongo:
-        image: mongo
-        container_name: przepisy.mongo
-        networks:
-            - global
-        stdin_open: true
-        tty: true
-        environment:
-            - AUTH=no
-        ports:
-            - 27017:27017
-        volumes:
-            - ./backend/tmp/db:/data/db
         restart: always
 networks:
     global:

@@ -40,22 +40,19 @@ class ApplicationController < ActionController::API
     @resource.destroy
   end
 
-  def find_collection_conditions
+  def find_collection_scope
+    @collection = @collection.offset(current_page * PAGE_LIMIT).limit(PAGE_LIMIT)
     @collection = @collection.order(created_at: :desc)
   end
 
   def current_page
-    params[:page].to_i || 0
+    params[:page] && params[:page].to_i || 0
   end
 
   def find_collection
+    @collection = scope
+    apply_additional_search_conditions
     find_collection_scope
-    @collection = @collection.limit(PAGE_LIMIT).offset(current_page * PAGE_LIMIT)
-  end
-
-  def find_collection_scope
-    @collection = scope.all
-    find_collection_conditions
   end
 
   def find_resource
@@ -74,6 +71,7 @@ class ApplicationController < ActionController::API
     {id: params[:id]}
   end
 
+  def apply_additional_search_conditions; end
   def after_process_create; end
   def before_process_create;end
   def before_process_save; end

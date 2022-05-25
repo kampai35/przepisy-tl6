@@ -23,7 +23,7 @@ class RecipesController < ApplicationController
     @resource.user = current_user
   end
 
-  def find_collection_conditions
+  def apply_additional_search_conditions
     filters = request.query_parameters
 
     if filters[:text]
@@ -32,7 +32,5 @@ class RecipesController < ApplicationController
         .or(:description => /.*#{filters[:text]}.*/i)
         .or(:name => /.*#{filters[:text]}.*/i)
     end
-
-    @collection = @collection.order(filters[:order])
   end
 end
