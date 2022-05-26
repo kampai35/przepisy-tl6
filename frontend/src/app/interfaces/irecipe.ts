@@ -1,18 +1,23 @@
 export interface Irecipe {
   _id: string;
+  created_at: number;
   description: string;
-  short_description: string;
+  image: string;
   ingredients: Iingredient[];
   level: number;
   name: string;
+  short_description: string;
   single_pot: boolean;
   size: number;
+  tags: Itags[];
   time: number;
-  user_id: any;
+  user_id: string;
 }
 
 export interface Iingredient {
-  id: string;
-  amount: number;
-  name: string
+  _id: string;
+  name: string;
+  amount: string;
+}
+export interface Itags{
 }

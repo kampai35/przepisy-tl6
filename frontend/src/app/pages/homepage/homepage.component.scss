@@ -1,38 +1,10 @@
+@import '../../../styles.scss';
 *{
   text-align: center;
   font-family: 'Lato', sans-serif;
 }
-@mixin headerSetup{
-  font-size: 2rem;
-  font-weight: 700;
-}
-@mixin niceButton{
-  color: white;
-  padding: 10px 20px 10px 20px;
-  border: 1px solid black;
-  cursor: pointer;
-  background-color: rgba(0, 0, 0, 0);
-  touch-action: manipulation;
-}
-@mixin niceButtonAfter{
-  content: "";
-  background-color: #ffba70;
-  width: 100%;
-  z-index: -1;
-  position: absolute;
-  height: 100%;
-  top: 7px;
-  left: 7px;
-  transition: 0.2s;
-}
-@mixin niceButtonHoverAfter{
-  top: 0px;
-  left: 0px;
-}
-/////////////////////
-h1{ @include headerSetup(); }
 
-///////////////////////////
+h1{ @include headerOne(); }
 blockquote{ margin-top: 3rem; }
 .underline{
   margin: auto;
@@ -73,12 +45,12 @@ blockquote{ margin-top: 3rem; }
   .randRight{
     width: 50%;
     .mat-button.mat-primary{
-      @include niceButton();
+      @include specialButtonBorder();
        margin-top: 1rem;
        font-size: 16px;
     }
-    .mat-button.mat-primary:after { @include niceButtonAfter(); }
-    .mat-button.mat-primary:hover:after { @include niceButtonHoverAfter(); }
+    .mat-button.mat-primary:after { @include specialButtonAfter(); }
+    .mat-button.mat-primary:hover:after { @include specialButtonHoverAfter(); }
   }
 }
 
@@ -86,9 +58,9 @@ blockquote{ margin-top: 3rem; }
   margin-bottom: 6rem;
 
   .mat-flat-button.mat-basic{
-    @include headerSetup();
-    @include niceButton();
+    @include headerOne();
+    @include specialButtonBorder();
   }
-  .mat-flat-button.mat-basic:after { @include niceButtonAfter(); }
-  .mat-flat-button.mat-basic:hover:after { @include niceButtonHoverAfter(); }
+  .mat-flat-button.mat-basic:after { @include specialButtonAfter(); }
+  .mat-flat-button.mat-basic:hover:after { @include specialButtonHoverAfter(); }
 }

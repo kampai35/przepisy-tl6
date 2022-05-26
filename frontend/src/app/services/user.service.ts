@@ -12,7 +12,8 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   public login(user: Iuser):Observable<Iuser>{
-    return this.http.post<{data: Iuser}>(this.baseURL+'/users/token', {data: user}).pipe(
+    return this.http.post<{data: Iuser}>(this.baseURL+'/users/token', {data: user})
+    .pipe(
       map((response) => response.data),
       tap((response: Iuser) => {
         //zamienia obiekty na jsonowy stringi
@@ -23,7 +24,8 @@ export class UserService {
   }
 
   public register(user: Iuser):Observable<Iuser>{
-    return this.http.post<{data: Iuser}>(this.baseURL+'/users', {data: user}).pipe(
+    return this.http.post<{data: Iuser}>(this.baseURL+'/users', {data: user})
+    .pipe(
       map((response) => response.data)
     )
   }

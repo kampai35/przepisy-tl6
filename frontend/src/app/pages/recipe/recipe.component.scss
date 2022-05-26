@@ -1,0 +1,122 @@
+@import '../../../styles.scss';
+
+@mixin title{
+  font-size: 36px;
+  color: $themeColor;
+  margin-bottom: 1rem;
+}
+@mixin fireIcons{
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.container{
+  display: flex;
+  margin: 3rem 0 3rem 0;
+  height: 715px;
+
+  .recipeLeft{
+    width: 50%;
+    padding: 0 3rem 0 3rem;
+    display: flex;
+    flex-direction: column;
+    h1, h2{ @include title; }
+
+    .edit{
+      display: flex;
+      h1{ width: 50%; }
+      .buttonArea{
+        width: 50%;
+        text-align: right;
+      }
+
+      .mat-fab.mat-button-base{
+        background-color: $themeColor;
+        color: white;
+        transition: 0.5s;
+      }
+      .mat-fab.mat-button-base:hover{
+        background-color: $themeColor;
+        transition: 0.5s;
+      }
+    }
+
+    .recipeDetails{
+      display: flex;
+
+      .imgContainer{
+        width: 60%;
+        margin-right: 1rem;
+        img{ width: 100%; }
+      }
+      .details{
+        width: 40%;
+        border-left: 1px solid $lightColor;
+        padding-left: 1rem;
+
+        .detailsUp{
+          height: 40%;
+
+          span{
+            display: flex;
+            align-items: center;
+            padding-bottom: 0.5rem;
+            mat-icon{ margin-right: 0.2rem; }
+          }
+          .textSpace{ margin-right: 0.2rem; }
+          .fireIcon{
+            background: -webkit-linear-gradient(90deg, rgba(108,0,0,1) 0%, rgba(255,0,0,1) 41%, rgba(255,248,0,1) 100%);
+            @include fireIcons();
+          }
+          .inactivefireIcon{
+            background: -webkit-linear-gradient(90deg, rgba(73,73,73,1) 0%, rgba(162,162,162,1) 41%, rgba(217,217,217,1) 100%);
+            @include fireIcons();
+          }
+        }
+        .detailsDown{
+          height: 60%;
+          display: flex;
+          align-items: flex-end;
+
+          .tagItem{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.2rem;
+            justify-content: flex-start;
+          }
+        }
+      }
+    }
+    .description{ margin: 1rem 0 1rem 0; }
+
+  }
+
+  .recipeIngredients{
+    width: 50%;
+    border-left: 1px solid $lightColor;
+    padding: 0 1rem 0 1rem;
+    h1, h2 { @include title() }
+
+    .howMakeIt{
+      height: 50%;
+    }
+
+    .ingredientsList{
+      height: 50%;
+
+      ul{
+        list-style-type: none;
+
+        li{
+          display: flex;
+          mat-icon{
+            color: $themeColor;
+            margin-right: 0.2rem;
+          }
+          .bold{ @include boldText() }
+        }
+      }
+    }
+  }
+}

@@ -1,12 +1,14 @@
+@import '../../../styles.scss';
 .container{
   padding: 0;
   margin: auto;
   margin-top: 2rem;
   width: 1200px;
+  display: flex;
+  flex-direction: column;
 
   virtual-scroller {
     max-width: 1000px;
-    margin: auto;
     height: 700px;
 
     .vsList {

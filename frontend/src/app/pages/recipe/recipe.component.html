@@ -1,0 +1,80 @@
+<div class="container">
+
+  <div class="recipeLeft">
+    <div class="edit">
+      <h1>{{recipe?.name}}</h1>
+      <div class="buttonArea">
+        <button mat-fab color="primary" (click)="editRecipe()">
+          <mat-icon>edit</mat-icon>
+        </button>
+      </div>
+    </div>
+
+    <div class="recipeDetails">
+      <div class="imgContainer">
+        <img src="{{recipe?.image}}" alt="">
+      </div>
+
+      <div class="details">
+        <div class="detailsUp">
+          <span>
+            <span class="textSpace">Poziom trudności:</span>
+            <span *ngFor="let _ of [].constructor(recipe?.level)"><mat-icon class="fireIcon">local_fire_department</mat-icon></span>
+            <span *ngFor="let _ of [].constructor(inactive)"><mat-icon class="inactivefireIcon">local_fire_department</mat-icon></span>
+          </span>
+
+          <span>
+            <mat-icon>timelapse</mat-icon>
+            Czas przygotowania: {{recipe?.time}} min
+          </span>
+
+          <span *ngIf="recipe?.single_pot === true; else noSingle">
+            <mat-icon>done_outline</mat-icon>
+            Danie jednogarnkowe
+          </span>
+          <ng-template #noSingle>
+            <mat-icon>close</mat-icon>
+            Danie nie jednogarnkowe
+          </ng-template>
+
+          <span>
+            <mat-icon>local_dining</mat-icon>
+            Ilość porcji: {{recipe?.size}}
+          </span>
+
+        </div>
+
+        <div class="detailsDown">
+          <div class="tagItem">
+            <mat-chip-list *ngFor="let item of recipe?.tags">
+              <mat-chip disabled class="tag">{{item}}</mat-chip>
+            </mat-chip-list>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="description">
+      <h2>Opis:</h2>
+      <span>{{recipe?.short_description}}</span>
+    </div>
+  </div>
+
+  <div class="recipeIngredients">
+    <div class="howMakeIt">
+      <h2>Sposób przygotowania</h2>
+      <span>{{recipe?.description}}</span>
+    </div>
+
+    <div class="ingredientsList">
+      <h1>Składniki</h1>
+      <ul>
+        <li *ngFor="let item of recipe?.ingredients">
+          <mat-icon>radio_button_checked</mat-icon>
+          <span class="bold">{{item?.name}}</span> - {{item?.amount}}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
