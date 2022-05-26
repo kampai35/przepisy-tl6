@@ -1,3 +1,4 @@
+import { EditRecipeComponent } from './edit-recipe/edit-recipe.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
@@ -24,7 +25,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import {MatCardModule} from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
 import {MatDialogModule} from '@angular/material/dialog';
-
+import {MatCheckboxModule} from '@angular/material/checkbox';
 @NgModule({
   declarations: [
     NavbarComponent,
@@ -32,13 +33,15 @@ import {MatDialogModule} from '@angular/material/dialog';
     RecipeCardTemplateComponent,
     FiltrAndSortComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    EditRecipeComponent
   ],
   exports: [
     NavbarComponent,
     FooterComponent,
     RecipeCardTemplateComponent,
     FiltrAndSortComponent,
+    EditRecipeComponent
   ],
   imports: [
     ServicesModule,
@@ -50,6 +53,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatDividerModule,
     MatIconModule,
     MatInputModule,
+    MatCheckboxModule,
     MatFormFieldModule,
     MatAutocompleteModule,
     MatExpansionModule,

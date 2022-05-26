@@ -1,5 +1,16 @@
-// @import '../.././../styles.scss';
+.mat-dialog-container{
+  width: 300px;
+  text-align: center;
 
-// h2{
-//   @include header;
-// }
+  .mat-dialog-content{
+    padding: 20px;
+
+    mat-button-focus-overlay{
+      background-color: red;
+      color: pink
+    }
+  }
+  .mat-dialog-actions{
+    justify-content: center;
+  }
+}

@@ -1,12 +1,13 @@
 import { Iuser } from './../../interfaces/iuser';
 import { UserService } from './../../services/user.service';
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class LoginComponent {
 
@@ -44,8 +45,9 @@ export class LoginComponent {
   submit(data){
     const loginData: Iuser = data.value;
 
-    this.userService.login(loginData)
-    .subscribe(() => console.log('zalogowano') );
+    this.userService.login(loginData).subscribe(() =>{
+      console.log('zalogowano');
+    });
   }
 
 }

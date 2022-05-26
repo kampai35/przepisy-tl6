@@ -4,7 +4,6 @@
   <virtual-scroller #scroll [items]="recipeDataObject">
     <app-recipe-card-template class="vsList" *ngFor="let recipeData of scroll.viewPortItems">
       <div class="title" contenteditable>{{recipeData.name}}</div>
-
       <div class="stars">
         <mat-icon>star</mat-icon>
         <mat-icon>star</mat-icon>
@@ -30,7 +29,7 @@
         </mat-chip-list>
       </div>
 
-      <div class="przepis"><button mat-stroked-button color="primary" routerLink='/przepis/{{recipeData._id["$oid"]}}'>Przepis</button></div>
+      <div class="przepis"><button mat-stroked-button color="primary" routerLink='/przepis/{{recipeData._id}}'>Przepis</button></div>
 
     </app-recipe-card-template>
   </virtual-scroller>

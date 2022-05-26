@@ -1,26 +1,27 @@
+@import '../../../styles.scss';
 .toolbar{
   padding: 1rem;
-  background-color: rgba(255, 255, 255, 0);
-  box-shadow: 0 0px 5px #a2a2a2;
+  background-color: $transparent;
+  box-shadow: 0 0px 5px $lightColor;
 
   .content{
     margin: auto;
     width: 1200px;
     display: flex;
 
-    .logo{ cursor: pointer; }
+    .logo{ cursor: $clickable; }
 
     .navSpacer{ flex: auto; }
 
     .menu{
-      cursor: pointer;
+      cursor: $clickable;
       .menuItem{ margin-left: 20px; }
       .mat-flat-button{
         font-size: 18px;
-        background-color: rgba(255, 255, 255, 0);
+        background-color: $transparent;
       }
       .menuItem:nth-child(2){
-        .mat-flat-button{ color: #a2a2a2; }
+        .mat-flat-button{ color: $lightColor; }
       }
 
     }
