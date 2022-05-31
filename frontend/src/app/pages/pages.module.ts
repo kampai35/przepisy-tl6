@@ -1,3 +1,4 @@
+import { UsersComponent } from './users/users.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
@@ -12,6 +13,7 @@ import { NotFoundPageComponent } from './not-found/not-found.component';
 import { MatButtonModule } from '@angular/material/button';
 import { VirtualScrollerModule } from 'ngx-virtual-scroller';
 import { MatChipsModule } from '@angular/material/chips';
+import { AngularSlickgridModule } from 'angular-slickgrid';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,7 @@ import { MatChipsModule } from '@angular/material/chips';
     HomepageComponent,
     RecipePageComponent,
     NotFoundPageComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,8 @@ import { MatChipsModule } from '@angular/material/chips';
     RouterModule,
     VirtualScrollerModule,
     MatChipsModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    AngularSlickgridModule.forRoot(),
   ]
 })
 export class PagesModule { }
