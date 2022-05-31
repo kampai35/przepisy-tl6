@@ -1,3 +1,4 @@
+import { UsersComponent } from './pages/users/users.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ListPapeComponent } from './pages/list/list-pape.component';
@@ -7,6 +8,7 @@ import { NotFoundPageComponent } from './pages/not-found/not-found.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
+  { path: 'users', component: UsersComponent },
   { path: 'lista-przepisow', component: ListPapeComponent },
   { path: 'przepis/:id', component: RecipePageComponent },
   { path: '**', component: NotFoundPageComponent }
